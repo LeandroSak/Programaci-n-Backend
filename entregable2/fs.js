@@ -79,7 +79,7 @@ class Contenedor {
     }
 }
 const contenedor1 = new Contenedor()
-contenedor1.save({ title: "jose", price: 123.12 })
+contenedor1.save({ title: "Regla", price: 123.12 })
 contenedor1.getById(1)
 contenedor1.getAll()
 contenedor1.deleteById(10)
