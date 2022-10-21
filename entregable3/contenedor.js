@@ -34,15 +34,14 @@ class Contenedor {
             }
         })
     }
-    getAll() {
-        fs.readFile("./productos.txt", "utf-8", (error, data) => {
-            if (error) {
-                throw new Error(error)
-            } else {
-                let produJason = JSON.parse(data)
-                console.log(produJason)
-            }
-        })
+    async getAll() {
+        let file = await fs.promises.readFile(`./productos.txt`, 'utf-8')
+            .then(data => {
+                let jsonData = JSON.parse(data)
+                return jsonData
+            })
+            .catch(error => console.log(error))
+        return file
     }
     deleteById(id) {
         fs.readFile("./productos.txt", "utf-8", (error, data) => {
@@ -50,7 +49,7 @@ class Contenedor {
                 throw new Error(error)
             } else {
                 let produJason = JSON.parse(data)
-                produJason.splice(produJason.findIndex((element) => element.id === id),1)
+                produJason.splice(produJason.findIndex((element) => element.id === id), 1)
                 fs.writeFile("./productos.txt", JSON.stringify(produJason, null, 2), error => {
                     if (error) {
                         throw new Error(error)
@@ -61,7 +60,7 @@ class Contenedor {
             }
         })
     }
-    deletAll(){
+    deletAll() {
         fs.readFile("./productos.txt", "utf-8", (error, data) => {
             if (error) {
                 throw new Error(error)
@@ -78,9 +77,5 @@ class Contenedor {
         })
     }
 }
-const contenedor1 = new Contenedor()
-contenedor1.save({ title: "Regla", price: 123.12 })
-contenedor1.getById(1)
-contenedor1.getAll()
-contenedor1.deleteById(10)
-contenedor1.deletAll()
+
+module.exports=Contenedor
