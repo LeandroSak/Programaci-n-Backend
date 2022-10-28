@@ -18,10 +18,5 @@
     "title": "Globo",
     "price": 2000,
     "id": 4
-  },
-  {
-    "title": "hola",
-    "price": "300",
-    "id": 5
   }
 ]
