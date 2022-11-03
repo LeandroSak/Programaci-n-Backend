@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row d-flex justify-content-center p-3">
+        <h3 class="text-center">Agregar Producto</h3>
+        <form class="col-sm-4 " action="/productos" method="post">
+            <div class="mb-3 text-center">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="mb-3 text-center">
+                <label class="form-label">Precio</label>
+                <input type="number" name="price" step="0.01" class="form-control">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <form class="col-sm-4 " action="/productos" method="get">
+            <h3 class="text-center">Productos</h3>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Lista</button>
+            </div>
+
+        </form>
+    </div>
+</div>
