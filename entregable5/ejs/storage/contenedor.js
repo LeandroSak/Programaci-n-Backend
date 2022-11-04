@@ -11,7 +11,7 @@ class Contenedor {
             let data = await fs.promises.readFile(`./storage/productos.txt`, 'utf-8')
             let produJason = JSON.parse(data)
             const ultimo = produJason[produJason.length - 1]
-            produJason.push({ title: objeto.title, price: objeto.price, id: ultimo.id + 1 , url:objeto.url})
+            produJason.push({ title: objeto.title, price: objeto.price, id: ultimo.id + 1, url: objeto.url })
             await fs.promises.writeFile("./storage/productos.txt", JSON.stringify(produJason, null, 2))
             return ultimo.id + 1
         } catch {
