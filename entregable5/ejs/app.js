@@ -15,8 +15,8 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.get('/', (_req,res) =>{
-    let message = "tu mama"
-    res.render('pages/index', {message});
+    
+    res.render('pages/index');
 })
 
 app.post('/productos', async(req,res)=>{
