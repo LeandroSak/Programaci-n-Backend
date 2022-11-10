@@ -41,14 +41,14 @@ function sendNewProduct(){
 function updateMessage(data){
     let messageToHtml = ''
     data.forEach(element => {
-        messageToHtml = messageToHtml + `<li>${element.userEmail}, [${element.time}] : ${element.message} `
+        messageToHtml = messageToHtml + `<li ><strong>${element.userEmail}</strong>, <font color="brown">[${element.time}]</font> : <font id="texto">${element.message}</font> </li>`
     })
     document.querySelector('#messageList').innerHTML = messageToHtml;
 }
 
-function updateProduct(data2){
+function updateProduct(data){
     let productToHtml = ''
-    data2.forEach(element => {
+    data.forEach(element => {
         productToHtml = productToHtml + `<tr>
         <td>
             ${element.title}
@@ -66,11 +66,15 @@ function updateProduct(data2){
 }
 
 
-socket.on('UPDATE_DATA', (data, data2) =>{
+socket.on('UPDATE_MESSAGE_DATA', (data) =>{
     messages = data;
-    products = data2;
+  
     updateMessage(data)
-    updateProduct(data2)
+   
+});
+socket.on('UPDATE_PRODUCTS_DATA', (data) =>{
+    products = data;
+    updateProduct(data)
 });
 
 socket.on('NEW_MESSAGE_FROM_SERVER', (data) =>{

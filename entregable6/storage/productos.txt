@@ -28,17 +28,5 @@
     "price": "943.06",
     "id": 5,
     "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png"
-  },
-  {
-    "title": "asdsad",
-    "price": "1213123",
-    "id": 6,
-    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png"
-  },
-  {
-    "title": "hola",
-    "price": "123123",
-    "id": 7,
-    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png"
   }
 ]
