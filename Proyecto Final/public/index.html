@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-left: auto;
+            margin-right: auto; 
+            width: 20rem;
+        }
+        #formulario {
+            margin-left: auto;
+            margin-right: auto; 
+            width: 30rem;   
+            height: 15rem;
+        }
+        .inputForm{
+            margin: 5px;
+            height: 30px;
+            width: 25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Agregar Productos</h1>
+    <form action="/api/productos" method="post" id="formulario">
+        <input type="text" name="title" placeholder="Titulo" class="inputForm">
+        <input type="number" name="price" placeholder="Precio" step="0.01" class="inputForm">
+        <input type="text" name="description" placeholder="Descripcion" class="inputForm">
+        <input type="number" name="stock" placeholder="Stock" class="inputForm">
+        <input type="text" name="url" placeholder="Foto" class="inputForm">
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Escruadra",
+    "price": "321.04",
+    "timestamp": "11/11/2022 22:54:24",
+    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png",
+    "description": "escruadra de exelente calidad",
+    "stock": "5",
+    "id": 1
+  },
+  {
+    "title": "Escruadra2",
+    "price": "123.04",
+    "timestamp": "11/11/2022 22:54:24",
+    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png",
+    "description": "escruadra de buena calidad",
+    "stock": "10",
+    "id": 2
+  },
+  {
+    "title": "Globo",
+    "price": "12313",
+    "timestamp": "11/11/2022 22:58:13",
+    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png",
+    "description": "Globo terraqueo",
+    "stock": "12",
+    "id": 3
+  }
+]
