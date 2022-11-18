@@ -1,7 +1,9 @@
 const express = require("express")
 const router = express.Router()
+const valid = require('../../middlewares/validAdmin')
 const cont=require("../../../storage/contenedor")
 const contenedor = new cont()
+
 
 
 router.get('/', async(_req,res, next)=>{
@@ -52,7 +54,8 @@ router.post('', async(req,res,next)=>{
     }
 })
 
-router.delete('/:id', async(req,res,next)=>{
+router.delete('/:id', valid,async(req,res,next)=>{
+    // ejemplo http://localhost:8080/api/productos/2?admin=true
     let {id} = req.params
     try{
         const products = await contenedor.deleteById(id)
@@ -70,7 +73,8 @@ router.delete('/:id', async(req,res,next)=>{
     }
 })
 
-router.put('/:id', async(req,res,next)=>{
+router.put('/:id', valid,async(req,res,next)=>{
+    // ejemplo http://localhost:8080/api/productos/2?admin=true
     let {id} = req.params
     try{
         const products = await contenedor.putById(id,req.body)
