@@ -1,6 +1,4 @@
-const fs = require('fs')
-
-
+import fs from 'fs'
 
 class Cart {
     constructor() {
@@ -153,8 +151,17 @@ class Cart {
         }
 
     }
+    async getAll() {
+        let file = await fs.promises.readFile(`./storage/carritos.json`)
+            .then(data => {
+                let jsonData = JSON.parse(data)
+                return jsonData
+            })
+            .catch(error => console.log(error))
+        return file
+    }
 }
 
 
 
-module.exports = Cart
+export default Cart

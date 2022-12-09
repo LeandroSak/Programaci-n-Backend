@@ -1,11 +1,11 @@
-const express = require("express")
+import express from 'express'
 const router = express.Router()
-const products = require('./products/products-routes')
-const cart = require('./cart/cart-routes')
+import products from './products/products-routes.js'
+import cart from './cart/cart-routes.js'
 
 router.use('/productos', products)
 router.use('/carrito', cart)
 
 
 
-module.exports = router
+export default router

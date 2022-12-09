@@ -1,15 +1,25 @@
-require('dotenv').config()
-const express = require ("express");
+import dotenv from 'dotenv'
+dotenv.config()
+import express  from 'express'
+import path from 'path'
+import router from './src/routes/index.js'
+import {fileURLToPath} from 'url';
 
-const router = require('./src/routes/index')
+import mongo from './database/mongoDB/config-mongo.js'
+mongo();
+
+import firebase from './database/firebase/firebase.js'
+firebase();
 
 const app = express()
-const errorHandler = require('./src/middlewares/error')
+import  errorHandler from './src/middlewares/error.js'
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use("/", express.static(__dirname + "/public"))
 app.use('/api', router)
 app.use(errorHandler)
 
 
-module.exports = app;
+export default app

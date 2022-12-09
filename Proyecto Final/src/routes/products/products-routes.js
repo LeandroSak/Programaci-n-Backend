@@ -1,8 +1,9 @@
-const express = require("express")
+import express from 'express'
 const router = express.Router()
-const valid = require('../../middlewares/validAdmin')
-const cont=require("../../../storage/contenedor")
-const contenedor = new cont()
+import valid from '../../middlewares/validAdmin.js'
+//import cont from "../../daos/productos/contenedorFirebase.js"
+import {ProductClass} from "../../daos/index.daos.productos.js";
+const contenedor = new ProductClass()
 
 
 
@@ -44,11 +45,10 @@ router.get('/:id', async(req,res,next)=>{
 router.post('', async(req,res,next)=>{
     try{
         const time = new Date().toLocaleString(); 
-        const products = await contenedor.save(req.body,time )
-        
+        const products = await contenedor.save(req.body,time );
         res.status(200).json({
             message:`Se agrego producto con id: ${products}`
-        })
+        });
     }catch(error){
         next(error)
     }
@@ -92,4 +92,4 @@ router.put('/:id', valid,async(req,res,next)=>{
 
 
 
-module.exports = router
+export default router
