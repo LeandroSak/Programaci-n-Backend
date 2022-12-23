@@ -1,0 +1,26 @@
+{
+  "name": "entregable6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.3",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
