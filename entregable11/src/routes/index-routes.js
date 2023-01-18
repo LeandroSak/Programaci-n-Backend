@@ -8,14 +8,8 @@ const mockTest = require("../../storage/faker")
 const mock = new mockTest()
 
 router.get('/',authMiddleware,async (req, res) => {
-    try{
-        res.status(200).render('pages/index', { root: __dirname, name: req.session.user });
-    }catch(error){
-        res.status(400).json({
-            response: "error",
-            error: error.message
-        })
-    }
+    const userData = req.user;
+    res.render('pages/index',{name:userData.username})
 })
 
 

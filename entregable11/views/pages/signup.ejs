@@ -28,7 +28,7 @@
                 <h3 class="text-center">Registrate</h3>
                 <div class="mb-3 text-center">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="username" id="username" class="form-control">
                 </div>
                 <div class="mb-3 text-center">
                     <label class="form-label">Password</label>
@@ -39,6 +39,14 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="row d-flex justify-content-center p-3">
+        <form class="col-sm-4 " action="/signin">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" value="Enviar">Iniciar Sesion</button>
+            </div>
+        </form>
+    </div>
 
     </div>
     <script src="/socket.io/socket.io.js"></script>

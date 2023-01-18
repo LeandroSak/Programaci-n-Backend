@@ -1,6 +1,6 @@
 const authMiddleware = (req, res, next) => {
     if(req.isAuthenticated()){
-        next();
+        return next();
        
     }
     res.redirect('/signin')

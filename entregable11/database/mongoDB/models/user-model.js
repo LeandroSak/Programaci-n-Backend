@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-    email:{
+    username:{
         type: String,
         require:true
     },

@@ -24,13 +24,18 @@
 
     <div class="container">
         <div class="row d-flex justify-content-center p-3">
-            <h1 class="text-center">Error</h1>
+            <h1 class="text-center"><%= message %> </h1>
         </div>
 
     </div>
     <script>
         setTimeout(function(){
-            window.location = "/signin";
+            let url = window.location.pathname;
+            console.info(url);
+            if(url=="/errorsignin"){
+                window.location = "/signin";
+            }else{
+            window.location = "/signup";}
         },2000)
     </script>
     <script src="/socket.io/socket.io.js"></script>

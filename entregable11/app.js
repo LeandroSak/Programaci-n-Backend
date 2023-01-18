@@ -42,8 +42,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const UserModel = require('./database/mongoDB/models/user-model')
 const md5 = require('md5')
 
-passport.use('login', new LocalStrategy(async (email, password, done) =>{
-    const userData = await UserModel.findOne({email,password});
+passport.use('login', new LocalStrategy(async (username, password, done) =>{
+    const userData = await UserModel.findOne({username,password:md5(password)});
     if(!userData){
         return done(null,false);
     }
@@ -52,14 +52,14 @@ passport.use('login', new LocalStrategy(async (email, password, done) =>{
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
-}, async ( req,email, password, done)=>{
-    const userData = await UserModel.findOne({email,password});
+}, async (req, username, password, done)=>{
+    const userData = await UserModel.findOne({username});
     if(userData){
         return done(null,false);
     }
     const stageUser = new UserModel({
-        email,
-        password
+        username,
+        password:md5(password)
     });
     const newUser = await stageUser.save();
     done(null,newUser);
