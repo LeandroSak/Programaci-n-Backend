@@ -1,6 +1,7 @@
 
 import mongoose  from 'mongoose'
 
+
 const cartSchema = mongoose.Schema({
     id:{
         type: Number,
@@ -9,6 +10,14 @@ const cartSchema = mongoose.Schema({
     timestamp:{
         type: String,
         require:true
+    },
+    status:{
+        type:String,
+        require:true
+    },
+    userID:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"users"
     },
     productos:{
         type:[{
@@ -48,4 +57,5 @@ const cartSchema = mongoose.Schema({
     
 });
 
-export default mongoose.model('carritos', cartSchema);
+
+export default mongoose.model('carritos', cartSchema)

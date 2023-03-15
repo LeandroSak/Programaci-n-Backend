@@ -1,5 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
 import Contenedor from "./productos/contenedor.js"
 import ContenedorFire from "./productos/contenedorFirebase.js"
 import ContenedorMongo from "./productos/contenedorMongo.js"

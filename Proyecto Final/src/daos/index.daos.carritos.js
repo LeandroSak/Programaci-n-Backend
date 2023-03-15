@@ -1,5 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
 import Cart from "../daos/carritos/Cart.js"
 import CartFire from "../daos/carritos/CartFirebase.js"
 import CartMongo from "../daos/carritos/CartMongo.js"

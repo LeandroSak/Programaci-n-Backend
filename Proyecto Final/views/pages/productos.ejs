@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+        <style>
+            img {
+                width: 2rem;
+            }
+        </style>
+        <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center p-3 ">
+            <form class="col-sm-4 " action="/logout" method="get">
+                <h1 class="mb-3 text-center">Bienvenido <%= user.username %>
+                </h1>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary" value="Enviar">Logout</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center p-2">
+            <div class="col-sm-6">
+                <h1 class="text-center">Lista de productos</h1>
+
+                <% if (lista.lenght !=0){ %>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">precio</th>
+                                <th scope="col">descripcion</th>
+                                <th scope="col">stock</th>
+                                <th scope="col">imagen</th>
+
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% lista.forEach(element=> {%>
+                                <tr>
+                                    <td>
+                                        <%=element.title%>
+                                    </td>
+                                    <td>
+                                        <%=element.price%>
+                                    </td>
+                                    <td>
+                                        <%=element.description%>
+                                    </td>
+                                    <td>
+                                        <%=element.stock%>
+                                    </td>
+                                    <td>
+                                        <img src=<%=element.url%> alt="">
+
+                                    </td>
+                                    <% if (user.clase=="admin" ){ %>
+                                        <td>
+                                            <a class="btn btn-primary" href="productos/<%=element.id%>?_method=DELETE">Borrar</a>
+                                            <a class="btn btn-primary" href="productos/editar/<%=element.id%>">editar</a>
+                                        </td>
+                                        <% }else{ %>
+                                            <td>
+                                                <form action="carrito/<%=carrito.id%>/productos/<%=element.id%>"
+                                                    method="post">
+                                                    <button type="submit" class="btn btn-primary"
+                                                        value="Enviar">Agregar</button>
+                                                </form>
+
+                                            </td>
+                                            <%}%>
+                                </tr>
+                                <% }) %>
+
+                        </tbody>
+                    </table>
+                    <% }else{ %>
+                        <div class="alert alert-danger text-center" role="alert">
+                            No hay productos!
+                        </div>
+                        <%}%>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <% if (user.clase=="admin" ){ %>
+            <div class="row  justify-content-center">
+                <form class="col-sm-4 " action="productos/carga" method="get">
+                    <h3 class="text-center">Cargar producto</h3>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Formulario</button>
+                    </div>
+                </form>
+            </div>
+            <% }else{ %>
+                <div class="row  justify-content-center">
+                    <form class="col-sm-4 " action="carrito/<%=carrito.id%>/productos" method="get">
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Carrito</button>
+                        </div>
+                    </form>
+                </div>
+                <%}%>
+                <div class="row  justify-content-center">
+                    <form class="col-sm-4 " action="/informacion" method="get">
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Informacion</button>
+                        </div>
+                    </form>
+                </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 import productsModel from '../../../database/mongoDB/models/products.model.js';
-
+import logger from '../../logger/logger.js';
 
 class Contenedor {
     constructor() {
@@ -21,8 +21,8 @@ class Contenedor {
             }
            
             return showid
-        } catch {
-            console.error(err)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
 
@@ -34,8 +34,8 @@ class Contenedor {
             } else {
                 return null
             }
-        } catch {
-            console.error(error)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
     async getAll() {
@@ -46,8 +46,8 @@ class Contenedor {
             } else {
                 return null
             }
-        } catch {
-            console.error(error)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
 
@@ -56,13 +56,13 @@ class Contenedor {
             let data = await productsModel.find({id:numberID});
             if (data) {
                 await productsModel.deleteOne({id:numberID})
-                return numberID
+                return data[0]
             } else {
                 return null
             }
 
-        } catch {
-            console.error(error)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
 
@@ -82,8 +82,8 @@ class Contenedor {
             } else {
                 return null
             }
-        } catch (error) {
-            console.error(error)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
 
@@ -96,8 +96,8 @@ class Contenedor {
             } else {
                 return console.log("no hay productos en la base de datos")
             }
-        } catch {
-            console.error(error)
+        } catch(error) {
+            logger.log("error", error.message);
         }
     }
 }
