@@ -2,15 +2,16 @@ import Contenedor from "./productos/contenedor.js"
 import ContenedorFire from "./productos/contenedorFirebase.js"
 import ContenedorMongo from "./productos/contenedorMongo.js"
 
-const getProductModule = ()=>{
+class ProductClass {
+    constructor(){
     const dataCore = process.env.DATACORE;
     if(dataCore == 'FIREBASE'){
-        return ContenedorFire
+        return  new ContenedorFire()
     }else if(dataCore == 'FS'){
-        return Contenedor
+        return  new Contenedor()
     }else if(dataCore == 'MONGO'){
-        return ContenedorMongo
+        return  new ContenedorMongo()
     }
-}
+}}
 
-export const ProductClass =  getProductModule();
+export default ProductClass 

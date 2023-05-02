@@ -23,3 +23,19 @@ error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"202
 error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-03-15T02:41:26.639Z"}
 error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-03-15T02:52:13.992Z"}
 error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-03-15T02:52:14.061Z"}
+warn: Error al iniciar sesion {"timestamp":"2023-05-02T01:59:49.459Z"}
+warn: Error al iniciar sesion {"timestamp":"2023-05-02T02:00:02.226Z"}
+warn: Error al iniciar sesion {"timestamp":"2023-05-02T02:00:07.526Z"}
+error: productos validation failed: price: Cast to Decimal128 failed for value "" (type string) at path "price" because of "BSONTypeError", title: Path `title` is required. {"timestamp":"2023-05-02T02:00:41.823Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:36:57.710Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:36:57.714Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:41:49.478Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:41:49.513Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:53:12.233Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:53:12.238Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:56:46.540Z"}
+error: Authenticate {"timestamp":"2023-05-02T04:56:46.554Z"}
+error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-05-02T05:00:04.619Z"}
+error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-05-02T05:00:04.687Z"}
+error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-05-02T21:02:31.683Z"}
+error: Cannot create property 'Symbol(level)' on string 'info' {"timestamp":"2023-05-02T21:02:31.687Z"}

@@ -58,7 +58,7 @@ class ContenedorFire {
             } else {
                 return null
             }
-        } catch {
+        } catch (error){
             console.error(error)
         }
     }
